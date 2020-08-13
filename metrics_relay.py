@@ -4,21 +4,21 @@ import logging
 from datetime import datetime
 
 def post_metrics():
-    try:
-        url = 'https://postb.in/1597283023263-9918144012335'
-        data = get_metrics()
+	try:
+		url = 'https://postb.in/1597283023263-9918144012335'
+		data = get_metrics()
 
-        response = requests.post(url, json=data)
+		response = requests.post(url, json=data)
 
-        if response.status_code != 200:
-            logging.error(f'Failure to POST data: {data} response: {response}')
+		if response.status_code != 200:
+			logging.error(f'Failure to POST data: {data} response: {response}')
 
-        return True
+		return True
 
-    except:
-        logging.exception('')
+	except:
+		logging.exception('')
 
-        return False
+		return False
 
 
 
@@ -36,14 +36,14 @@ that this function be called with at least 0.1 seconds between calls.
 '''
 
 def get_metrics():
-    return {
-        'cpu_percent_used': psutil.cpu_percent(interval=1),
-        'memory_percent_used': psutil.virtual_memory().percent,
-        'disk_percent_used': psutil.disk_usage('/').percent
-    }
+	return {
+		'cpu_percent_used': psutil.cpu_percent(interval=1),
+		'memory_percent_used': psutil.virtual_memory().percent,
+		'disk_percent_used': psutil.disk_usage('/').percent
+	}
 
 
-filename = datetime.now().strftime("%m-%d-%Y")+'.log'
+filename = '/home/ubuntu/metrics/' + datetime.now().strftime("%m-%d-%Y")+'.log'
 logging.basicConfig(level=logging.ERROR, filename=filename)
 
 
