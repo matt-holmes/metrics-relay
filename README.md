@@ -7,9 +7,9 @@ This is being setup on an AWS EC2 instance running Ubuntu 18.04
 ### Inside your Linux Shell
 
 #### Install psutil library (https://psutil.readthedocs.io/en/latest/):
-1. `sudo apt update`
-2. `sudo apt-get install python3-pip`
-3. `pip3 install psutil`
+1. `$:sudo apt update`
+2. `$:sudo apt-get install python3-pip`
+3. `$:pip3 install psutil`
 
 #### Inside your home dir
 1. Make a new directory called `metrics` 
