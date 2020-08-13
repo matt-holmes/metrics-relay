@@ -11,10 +11,14 @@ def post_metrics():
         response = requests.post(url, json=data)
 
         if response.status_code != 200:
-            logging.exception(f'Failure to POST data: {data} response: {response}')
+            logging.error(f'Failure to POST data: {data} response: {response}')
+
+        return True
 
     except:
         logging.exception('')
+
+        return False
 
 
 
@@ -39,8 +43,8 @@ def get_metrics():
     }
 
 
-
-logging.basicConfig(level=logging.ERROR, filename=datetime.now().strftime("%m-%d-%Y")+'.log')
+filename = datetime.now().strftime("%m-%d-%Y")+'.log'
+logging.basicConfig(level=logging.ERROR, filename=filename)
 
 
 post_metrics()
