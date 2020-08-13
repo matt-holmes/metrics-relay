@@ -1,7 +1,7 @@
 # Metrics Relay
 
 ## Assumptions
-This is being setup on an AWS EC2 instance running Ubuntu 18.04
+This is being setup on an AWS EC2 instance running Ubuntu 18.04 with Python 3.7 installed.
 
 ## Setup
 ### Inside your Linux Shell
